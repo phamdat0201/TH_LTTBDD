@@ -16,17 +16,13 @@ import {NavigationContainer} from '@react-navigation/native';
 const App = () => {
   const Stack = createNativeStackNavigator();
   return (
-    //  điều hướng các màn hình
-    // NavigationContainer Đóng gói toàn bộ ứng dụng
     <NavigationContainer>
       <Stack.Navigator
-        // Quản lý các màn hình
         initialRouteName="FirstScreen"
         screenOptions={{
           headerShown: false,
         }}>
         <Stack.Screen name="FirstScreen" component={FirstScreen} />
-        {/*Stack.Screen các thành phần của màn hình  */}
         <Stack.Screen name="sc1_a" component={sc1_a} />
         <Stack.Screen name="sc1_b" component={sc1_b} />
         <Stack.Screen name="sc1_c" component={sc1_c} />
