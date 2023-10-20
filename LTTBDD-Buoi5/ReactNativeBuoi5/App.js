@@ -1,29 +1,23 @@
-const Stack = createNativeStackNavigator();
-import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import Screen1 from "./screen/Screen1";
+import Screen2 from "./screen/Screen2";
+import { createStackNavigator } from "@react-navigation/stack";
 
-import Screen01 from './screens/Screen01';
+const Stack = createStackNavigator();
 
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {View, Text, Pressable, TouchableOpacity} from 'react-native';
-
-const App = () => {
-  const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
-
+export default function App() {
   return (
-    <>
-      <NavigationContainer>
-        {hideSplashScreen ? (
-          <Stack.Navigator screenOptions={{headerShown: false}}>
-            <Stack.Screen
-              name="Screen01"
-              component={Screen01}
-              options={{headerShown: false}}
-            />
-          </Stack.Navigator>
-        ) : null}
-      </NavigationContainer>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="S1"
+        screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen name="S1" component={Screen1} />
+        <Stack.Screen name="S2" component={Screen2} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
-export default App;
+}
