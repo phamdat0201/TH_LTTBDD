@@ -1,24 +1,24 @@
-const Stack = createNativeStackNavigator();
-import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import API_Screen_01 from "./screens/API_Screen_01";
-import API_Screen_02 from "./screens/API_Screen_02";
-
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import Screen02 from "./screens/Screen02";
+import Screen01 from "./screens/Screen01";
+import Screen03 from "./screens/Screen03";
+import Screen04 from "./screens/Screen04";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View, Text, Pressable, TouchableOpacity } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 
-const App = () => {
-
+export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-    <Stack.Navigator
-      initialRouteName="API_Screen_01"
-      screenOptions={{ headerShown: false }}
-    >
-      <Stack.Screen name="API_Screen_01" component={API_Screen_01} />
-      <Stack.Screen name="API_Screen_02" component={API_Screen_02} />
-    </Stack.Navigator>
-  </NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Screen01" component={Screen01} />
+        <Stack.Screen name="Screen02" component={Screen02} />
+        <Stack.Screen name="Screen03" component={Screen03} />
+        <Stack.Screen name="Screen04" component={Screen04} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
-export default App;
+}
+
+const styles = StyleSheet.create({});
